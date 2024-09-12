@@ -55,7 +55,7 @@ Krishi-Suvidha/
 
 3. Start the development server:
    ```bash
-   npm run dev
+   npm start
    ```
 
 4. Open your browser and visit `http://localhost:3000` to see the frontend in action.
