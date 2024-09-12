@@ -77,7 +77,7 @@ Krishi-Suvidha/
    npm start
    ```
 
-4. The backend will be available at `http://localhost:5000`.
+4. The backend will be available at `http://localhost:3000`.
 
 ## 📄 Contributing
 
