@@ -17,7 +17,8 @@ const Profile = () => {
     if(!Cookies.get('access-token')) {
         navigate('/');
     }
-  }, []);
+}, [navigate]);
+
   const authState = useSelector((state) => state.authReducer);
   const user = authState.user.data;
   console.log(user);
