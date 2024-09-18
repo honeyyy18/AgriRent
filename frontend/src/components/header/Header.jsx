@@ -15,12 +15,12 @@ import userIcon from "../../img/user_icon.svg";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const tokenState = useSelector((state) => state.tokenReducer);
   const authState = useSelector((state) => state.authReducer);
 
   const [show, setShow] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
+  const [isLoginHovered, setIsLoginHovered] = useState(false); // New state to track hover
 
   return (
     <div className="h-16 inPhone">
@@ -67,24 +67,26 @@ const Header = () => {
         {!Cookies.get("refresh-token") ? (
           <div className="flex items-center">
             <button
-  onClick={() => setShowLogin(true)}
-  className="bg-[#4bad75] border-2 transition border-[#219653] text-white hover:bg-white hover:text-[#219653] font-bold py-1 px-8 rounded mx-2"
->
-  Login
-</button>
-<button
-  onClick={() => setShowRegister(true)}
-  className="bg-white border-2 transition border-[#219653] text-[#219653] hover:bg-[#4bad75] hover:text-white font-bold py-1 px-8 rounded mx-4"
->
-  Sign Up
-</button>
-
-
+              onMouseEnter={() => setIsLoginHovered(true)} // Set hover state
+              onMouseLeave={() => setIsLoginHovered(false)} // Unset hover state
+              onClick={() => setShowLogin(true)}
+              className="bg-[#4bad75] border-2 transition border-[#219653] text-white hover:bg-white hover:text-[#219653] font-bold py-1 px-8 rounded mx-2"
+            >
+              Login
+            </button>
+            <button
+              onClick={() => setShowRegister(true)}
+              className={`${
+                isLoginHovered ? "bg-[#219653] text-white" : "bg-white text-[#219653]"
+              } border-2 transition border-[#219653] hover:bg-[#4bad75] hover:text-white font-bold py-1 px-8 rounded mx-4`}
+            >
+              Sign Up
+            </button>
           </div>
         ) : (
           <div
-            onMouseOver={(prev) => setShow(true)}
-            onMouseLeave={(prev) => setShow(false)}
+            onMouseOver={() => setShow(true)}
+            onMouseLeave={() => setShow(false)}
             className="my-auto"
           >
             <div className="bg-gray-200 relative rounded-full py-1 px-4 my-auto text-gray-700 flex items-center z-40 hover:bg-gray-300 mr-5 cursor-pointer">
@@ -96,7 +98,6 @@ const Header = () => {
               <p className="text-lg font-semibold">
                 {"Hi, " + authState.user.data.first_name}
               </p>
-              {/* <p className="text-lg font-semibold">{"Hi, Gajendra"}</p> */}
             </div>
             {show && (
               <div
