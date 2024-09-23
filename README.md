@@ -4,7 +4,7 @@
 
 ## 📦 Features
 
-- **Equipment Listing**: Farmers can easily list their equipment, set availability, and provide detailed information.
+- **Equipment Listing**: Farmers can easily list their equipment, set availability, and provide detailed informations.
 - **Seamless Rental Process**: Renters can browse, search, and rent equipment with just a few clicks.
 - **Real-Time Chat**: Communicate instantly with equipment owners through our integrated chat system.
 - **Smart Search**: Find exactly what you need with our powerful search functionality.
