@@ -2,8 +2,8 @@ import axios from "axios";
 import instance from "./config";
 import Cookies from "js-cookie";
 
-const url = "https://krishi-sadhan-app.herokuapp.com";
-// const url = "http://localhost:5000";
+// const url = "https://krishi-sadhan-app.herokuapp.com";
+const url = "http://localhost:5000";
 
 export const postRegisterData = async ({
   first_name,
@@ -11,16 +11,16 @@ export const postRegisterData = async ({
   password,
   last_name,
   pin_code,
-  phone_number
+
 }) => {
   try {
-    const res = await axios.post(`${url}/users/signup/`, {
+    const res = await axios.post(`${url}/api/auth/register`, {
       first_name,
       last_name,
       email,
       password,
       pin_code,
-      phone_number
+     
     });
     return Promise.resolve(res.data);
   } catch (err) {
@@ -31,7 +31,7 @@ export const postRegisterData = async ({
 export const postLoginDataEmail = async ({ email, password }) => {
   try {
     console.log(email, password);
-    const res = await instance.post(`/users/login/email`, {
+    const res = await instance.post(`/api/auth/login`, {
       email,
       password
     });
