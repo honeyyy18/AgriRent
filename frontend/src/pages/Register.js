@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, createSearchParams } from "react-router-dom";
-// import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 //Components
 import InputField from "../components/input/InputField";
@@ -9,7 +8,6 @@ import { ErrorMsg } from "../components/alerts";
 //Functions
 import { postRegisterData } from "../api/authAPI";
 import { isEmail, isEmpty, isValidPassword } from "../utils/validation";
-// import { getSaveProfileAction } from "../redux/actions";
 
 //Images
 import cross_black from "../img/cross_black.svg";
@@ -21,7 +19,6 @@ const Register = ({ onClick }) => {
   const [last_name, setLastName] = useState("");
   const [password, setPassword] = useState("");
   const [pin_code, setPincode] = useState("");
-  const [phone_number, setPhoneNumber] = useState("");
 
   const [loading, setLoading] = useState(true);
   const [success, setSuccess] = useState(false);
@@ -37,7 +34,6 @@ const Register = ({ onClick }) => {
       isEmpty(email) ||
       isEmpty(password) ||
       isEmpty(pin_code) ||
-      isEmpty(phone_number) ||
       isEmpty(last_name)
     ) {
       return <ErrorMsg msg="Please Fill in all the details" />;
@@ -48,7 +44,7 @@ const Register = ({ onClick }) => {
     }
 
     if (!isValidPassword(password)) {
-      return <ErrorMsg msg="Password must be atleast 4 characters long" />;
+      return <ErrorMsg msg="Password must be at least 4 characters long" />;
     }
 
     try {
@@ -58,22 +54,16 @@ const Register = ({ onClick }) => {
         email,
         password,
         last_name,
-        pin_code,
-        phone_number
+        pin_code
       });
       console.log(data);
-      // useDispatch(getSaveProfileAction(data.data));
+
       if (!data.success) {
       } else {
         setSuccess(data.success);
         setMessage(data.message);
         setLoading(false);
-        navigate({
-          pathname: "../verify-otp",
-          search: `?${createSearchParams({
-            phone_number: phone_number
-          })}`
-        });
+        navigate("/success-page"); // Redirect to a success page or home
       }
     } catch (error) {
       error && setMessage("Server Issue, Try again later");
@@ -150,13 +140,6 @@ const Register = ({ onClick }) => {
               placeholder="Pincode*"
               value={pin_code}
               onChange={(e) => setPincode(e.target.value)}
-              type="text"
-              required={true}
-            />
-            <InputField
-              placeholder="Phone Number*"
-              value={phone_number}
-              onChange={(e) => setPhoneNumber(e.target.value)}
               type="text"
               required={true}
             />

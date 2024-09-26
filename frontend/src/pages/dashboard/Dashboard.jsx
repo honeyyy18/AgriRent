@@ -421,7 +421,7 @@ const Dashboard = () => {
                         <h1 className='text-2xl font-bold text-gray-600 text-right'>Search Equipments</h1>
                         <div className=''>
                             <div className="input-group relative flex items-center w-full mb-4">
-                                <i onClick={SpeechRecognition.startListening} className="text-darkgreen tooltip cursor-pointer text-2xl mr-5 fa-solid fa-microphone"><span className="tooltiptext">Search by Voice</span></i>
+                                {/* <i onClick={SpeechRecognition.startListening} className="text-darkgreen tooltip cursor-pointer text-2xl mr-5 fa-solid fa-microphone"><span className="tooltiptext">Search by Voice</span></i> */}
 
                                     <input onChange={(e) => handleFilter(e)} value={searchInput} type="search" className="searchInput form-control relative flex-auto min-w-0 block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Enter your Equipment here......" aria-label="Search" aria-describedby="button-addon3" />
                                     <button className="searchBtn btn inline-block px-6 py-2 text-green-600 font-medium text-sm leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 cursor-pointer focus:outline-none focus:ring-0 transition duration-150 ease-in-out" type="button" id="button-addon3">Search</button>
@@ -571,7 +571,7 @@ const Dashboard = () => {
 
                             <div className='relative flex justify-around'>
                                 <h1 className='absolute top-0 left-0 text-2xl font-bold text-gray-600'>All Products</h1>
-                                <a className='absolute top-0 right-10 mx-auto hover:bg-green-700 text-green-600 text-sm font-normal'>View All</a>
+                                <a className='absolute top-0 right-10 mx-autohover:opacity-90 cursor-pointer text-green-600 text-sm font-normal'>View All</a>
                             </div>
 
                             <div className='flex flex-wrap items-center'>
