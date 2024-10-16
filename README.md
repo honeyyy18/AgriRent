@@ -9,7 +9,7 @@
 - **Real-Time Chat**: Communicate instantly with equipment owners through our integrated chat system.
 - **Smart Search**: Find exactly what you need with our powerful search functionality.
 
-## Note:- Under Working ! 
+## Note:- Project Under Working ! 
 
 ## 📁 Folder Structure
 
