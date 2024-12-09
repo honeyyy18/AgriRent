@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal'; // Corrected import statement
 import TextField from '@mui/material/TextField';
-
+import axios from 'axios';
 
 const ProductCard = ({ machine }) => {
   // console.log(machine);
 
 
   const navigate = useNavigate();
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:3000';
   //  onClick={() => navigate(`/product/${machine._id}`)} in outermost div
   // console.log(machine);
   const [modal, setModal] = useState(false);
@@ -26,6 +26,11 @@ const ProductCard = ({ machine }) => {
 
   const handleConfirmBooking = () => {
     // Perform booking action here
+    axios.post(`${BASE_URL}/api/booking`, {
+      machineId: machine._id,
+      ownerId: machine.ownerId,
+      
+    })
     console.log("Booking confirmed!");
     closeModal();
   };

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function Footer() {
     return (
         <div className=' p-5 px-8 w-full border-t border-zinc-500  flex items-center bg-[#f7f7f8b8]  bottom-0 z-10'>
@@ -13,20 +13,20 @@ function Footer() {
                     
                     <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><a href="#contact">How it works</a></h1>
                     <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><a href="#contact">Who we are</a></h1>
-                    <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><a href="#about">Login</a></h1>
-                    <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><a href="#about">Register</a></h1>
+                    <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><Link to="/login">Login</Link></h1>
+                    <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><Link to="/register">Register</Link></h1>
                 </div>
                 <div className='flex flex-col items-start justify-start  w-1/3'>
                     
-                    <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><a href="#about">Products</a></h1>
-                    <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><a href="#about">Add products</a></h1>
+                    <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><Link to="/products">Product</Link></h1>
+                    <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><Link to="/add_products">Add Product</Link></h1>
                     <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><a href="#contact">FAQs</a></h1>
                     <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><a href="#contact">Contact</a></h1>
                 </div>
                 <div className='flex flex-col items-start justify-start  w-1/3'>
                     
                     <h1 className='hover:bg-[#b2d8b4] p-1 rounded-md'><a href="#contact">T&C</a></h1>
-                    <h1 > © 2024 Abhishek</h1>
+                    <h1 > © 2024 Honey Givi Gitika </h1>
                 </div>
             </div>
 

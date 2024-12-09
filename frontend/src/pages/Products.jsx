@@ -13,7 +13,7 @@ const Products = () => {
   const [machinesByCategory, setMachinesByCategory] = useState({});
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState([]);
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:3000';
 
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");

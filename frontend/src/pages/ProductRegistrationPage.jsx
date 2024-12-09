@@ -5,7 +5,7 @@ import { Toaster, toast } from 'react-hot-toast';
 
 function ProductRegistrationPage() {
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:3000';
   const [machineDetails, setMachineDetails] = useState({
     name: "",
     company: "",

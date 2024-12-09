@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
 
 function Register() {
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:3000'
   const navigate = useNavigate();
   const [isRegistered, setIsRegistered] = useState(false);
 
